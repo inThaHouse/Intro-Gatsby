@@ -4,6 +4,8 @@ This repo hosts code/notes taken from the course https://frontendmasters.com/cou
 
 ## My own notes
 
+This course is meant to show the different features of gatsby. This isn't a course about best practices on code and folder structures.
+
 <details>
   <summary>Intro</summary>
 
@@ -53,7 +55,7 @@ This repo hosts code/notes taken from the course https://frontendmasters.com/cou
 
 ### Graphql
 
-- By default, in development, you can access the playground at http://localhost:8000/\_\_\_graphql
+- By default, in development, you can access the playground at http://localhost:8000/\_\_graphql
 - `src/hooks/use-sitemetadata.js` has an example on how you can leverage gatsby utils to build your query and return data from it.
 - More info at https://www.gatsbyjs.com/docs/reference/graphql-data-layer/graphql-api/
 </details>
@@ -63,5 +65,17 @@ This repo hosts code/notes taken from the course https://frontendmasters.com/cou
 
 - Allows react components to be in markdown files.
 - You can programmatically create pages (like blog posts) using gatsby node api. https://www.gatsbyjs.com/docs/reference/config-files/gatsby-node/#createPages
+
+</details>
+
+<details>
+  <summary>Working with images</summary>
+
+- See https://www.gatsbyjs.com/plugins/gatsby-plugin-sharp/ for more info.
+- See https://www.gatsbyjs.com/plugins/gatsby-transformer-sharp for more info.
+- You can leverage the plugin system to do transformations to your images into other formats, different image sizes to apply appropriate screen sizes.
+- You can see the results of the different transformations in graphql.
+- In graphql, see them most likely in `childImageSharp { fluid { different transformation results here } }`
+- To use images in md files, we will need the plugin `gatsby-remark-images`. See `gatsby-config.js` for more info.
 
 </details>

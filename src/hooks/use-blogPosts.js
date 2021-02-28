@@ -9,8 +9,14 @@ const useBlogPosts = () => {
             title
             slug
             author
+            image {
+              childImageSharp {
+                fluid(maxWidth: 100, maxHeight: 100) {
+                  ...GatsbyImageSharpFluid_withWebp
+                }
+              }
+            }
           }
-
           excerpt
         }
       }
@@ -22,6 +28,7 @@ const useBlogPosts = () => {
     author: post.frontmatter.author,
     slug: post.frontmatter.slug,
     except: post.excerpt,
+    image: post.frontmatter.image,
   }))
 }
 

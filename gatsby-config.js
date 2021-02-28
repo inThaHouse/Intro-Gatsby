@@ -6,6 +6,7 @@ module.exports = {
   },
   // If your plugin doesn't require additional config, you can simply list the plugin name as a string
   // If you need to configure the plugin, see gatsby-plugin-mdx example below.
+  // Everytime you install a new plugin, check gql to see what they give you.
   plugins: [
     'gatsby-plugin-emotion',
     'gatsby-plugin-react-helmet',
@@ -17,6 +18,8 @@ module.exports = {
         defaultLayouts: {
           default: require.resolve('./src/components/Layout.js'),
         },
+        gatsbyRemarkPlugins: [{ resolve: 'gatsby-remark-images' }],
+        plugins: [{ resolve: 'gatsby-remark-images' }], // plugin can convert md files to html.
       },
     },
     {

@@ -1,16 +1,17 @@
 import React from 'react'
 import styled from '@emotion/styled'
 import { Link, graphql, useStaticQuery } from 'gatsby'
+import BackgroundImage from 'gatsby-background-image'
 
-const ImageBackground = styled('div')`
-  background-image: url('/images/mtl.webp');
+const ImageBackground = styled(BackgroundImage)`
+  background-image: url('./images/mtl.webp');
   background-position: top 20% center;
   background-size: cover;
   height: 50vh;
 
   + * {
     margin-top: 0;
-  }
+  
 `
 
 const TextBox = styled('div')`
@@ -21,6 +22,7 @@ const TextBox = styled('div')`
   justify-content: flex-end;
   padding: 0 calc((100vw - 550px) / 2) 2rem;
   width: 100%;
+  margin-top: 0;
 
   h1 {
     text-shadow: 1px 1px 3px #eeddff66;
@@ -39,8 +41,24 @@ const TextBox = styled('div')`
 `
 
 const Hero = () => {
+  const { image } = useStaticQuery(graphql`
+    query {
+      image: file(relativePath: { eq: "mtl.webp" }) {
+        childImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid_withWebp
+          }
+        }
+      }
+    }
+  `)
+
   return (
-    <ImageBackground>
+    <ImageBackground
+      Tag='section'
+      fluid={image.childImageSharp.fluid}
+      fadeIn='soft'
+    >
       <TextBox>
         <h1>Frontend Masters</h1>
         <p>
