@@ -1,7 +1,7 @@
 import React from 'react'
-import { css } from '@mdx-js/react'
+import { css } from '@emotion/react'
 import { Link } from 'gatsby'
-import ReadLink from './styled/read-link'
+import ReadLink from './styled/ReadLink'
 
 const PostPreview = ({ post }) => {
   return (

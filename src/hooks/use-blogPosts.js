@@ -17,12 +17,12 @@ const useBlogPosts = () => {
     }
   `)
 
-  return {
-    title: '',
-    author: '',
-    slug: '',
-    except: '',
-  }
+  return allMdx.nodes.map((post) => ({
+    title: post.frontmatter.title,
+    author: post.frontmatter.author,
+    slug: post.frontmatter.slug,
+    except: post.excerpt,
+  }))
 }
 
 export default useBlogPosts

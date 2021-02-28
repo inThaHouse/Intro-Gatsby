@@ -62,5 +62,6 @@ This repo hosts code/notes taken from the course https://frontendmasters.com/cou
   <summary>Using MDX</summary>
 
 - Allows react components to be in markdown files.
+- You can programmatically create pages (like blog posts) using gatsby node api. https://www.gatsbyjs.com/docs/reference/config-files/gatsby-node/#createPages
 
 </details>

@@ -9,6 +9,8 @@ module.exports = {
   plugins: [
     'gatsby-plugin-emotion',
     'gatsby-plugin-react-helmet',
+    'gatsby-transformer-sharp', // looks for data and transforms it into another type of data
+    'gatsby-plugin-sharp',
     {
       resolve: 'gatsby-plugin-mdx',
       options: {
@@ -23,6 +25,13 @@ module.exports = {
       options: {
         name: 'posts',
         path: 'src/posts',
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'images',
+        path: 'src/images',
       },
     },
   ],
